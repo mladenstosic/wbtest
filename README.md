@@ -1,5 +1,5 @@
 # Run the binary locally
-./wbtest
+./wbtest.amd64
 
 # Build Docker image (run the tests/gosec, build binary, expose port)
 docker build -f Dockerfile -t wbtest:latest .
