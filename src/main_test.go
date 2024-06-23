@@ -61,4 +61,7 @@ func TestServeHTTPTableDriven(t *testing.T) {
 			t.Errorf("Expected message %s. Got %s", tt.wantMessage, output.Message)
 		}
 	}
+
+	// Clean DB after testing
+	app.DB.Exec("DELETE FROM users")
 }
