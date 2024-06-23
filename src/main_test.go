@@ -38,7 +38,7 @@ func TestServeHTTPTableDriven(t *testing.T) {
 
 	for _, tt := range tests {
 
-		log.Println("Testing ", tt.method, tt.url, string(tt.data))
+		log.Println("Testing", tt.method, tt.url, string(tt.data))
 
 		request := httptest.NewRequest(tt.method, tt.url, bytes.NewBuffer(tt.data))
 		response := httptest.NewRecorder()
