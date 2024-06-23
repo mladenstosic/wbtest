@@ -37,11 +37,12 @@ func TestServeHTTPTableDriven(t *testing.T) {
 	}
 
 	for _, tt := range tests {
+
+		log.Println("Testing ", tt.method, tt.url, string(tt.data))
+
 		request := httptest.NewRequest(tt.method, tt.url, bytes.NewBuffer(tt.data))
 		response := httptest.NewRecorder()
 		app.Router.ServeHTTP(response, request)
-
-		log.Println("Testing ", tt.method, tt.url)
 
 		// Marhsal body
 		var output output
